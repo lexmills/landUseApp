@@ -201,12 +201,23 @@ require([
         $("#spanZoomAll").hide();
 
         $(document).on("click", "#search", function() {
-            $("#searchBox").css("visibility", "visible");
+            if($("#searchBox").css("visibility") == "visible") {
+                $("#searchBox").css("visibility", "hidden");
+            }
+            else {
+                $("#searchBox").css("visibility", "visible");
+            }
+
         });
 
         $(document).on("click", "#layers", function() {
-            console.log("layers");
-            $("#divLayerVisibility").css("visibility", "visible");
+            console.log($("#divLayerVisibility").css("visibility"));
+            if($("#divLayerVisibility").css("visibility") == "visible") {
+                $("#divLayerVisibility").css("visibility", "hidden");
+            }
+            else {
+                $("#divLayerVisibility").css("visibility", "visible");
+            }
         });
 
         registry.byId("btnMoveToStart").setDisabled(true);

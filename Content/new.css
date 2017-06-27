@@ -83,6 +83,9 @@ table, th, td {
 
 #search-container #searchBox {
     background: #FFFFFF;
+    border: 1px solid #ccc;
+    left: 0;
+    padding: .5em;
 }
 
 #divLayerVisibility {
