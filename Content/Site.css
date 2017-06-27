@@ -1,0 +1,512 @@
+﻿/* #region Site Styles */
+body {
+    background-color:#FEE4B7;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 3px;
+    text-align: left;
+}
+
+html, body {
+    padding: 0;
+    margin: 0 auto;
+    height: 100%;
+}
+
+#warning {
+    display:hidden;
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:1px;
+    height:1px;
+    background-color:#aaaaaa;
+    overflow:hidden;
+}
+
+#SussexCoLogo {
+    display:block;
+    background-image: url(../Images/sussex-brand2.png);
+    background-repeat:no-repeat;
+    width:412px;
+    height:92px;
+    overflow:hidden;
+}
+
+
+.moveToStartIcon {
+    background-image: url(../images/GenericBlueStartArrowNoTail16.png);
+    width: 16px;
+    height: 16px;
+}
+
+.moveUpIcon {
+    background-image: url(../images/GenericBlueUpArrowLongTail16.png);
+    width: 16px;
+    height: 16px;
+}
+
+.moveDownIcon {
+    background-image: url(../images/GenericBlueDownArrowLongTail16.png);
+    width: 16px;
+    height: 16px;
+}
+
+.moveToEndIcon {
+    background-image: url(../images/GenericBlueEndArrowNoTail16.png);
+    width: 16px;
+    height: 16px;
+}
+
+.movePreviousIcon {
+    background-image: url(../images/GenericBlueLeftArrowNoTail16.png);
+    width: 16px;
+    height: 16px;
+}
+
+.moveNextIcon {
+    background-image: url(../images/GenericBlueRightArrowNoTail16.png);
+    width: 16px;
+    height: 16px;
+}
+
+.zoominIcon {
+    /* Hidden in UI */
+    background-image: url(../Images/button-sprite.png);
+    background-position:-18px 0;
+    width: 18px;
+    height: 18px;
+}
+
+.zoomoutIcon {
+    /* Hidden in UI */
+    background-image: url(../Images/button-sprite.png);
+    background-position:-36px 0;
+    width: 18px;
+    height: 18px;
+}
+
+.panIcon {
+    /* Hidden in UI */
+    background-image: url(../Images/button-sprite.png);
+    background-position:-54px 0;
+    width: 18px;
+    height: 18px;
+}
+
+.identifyIcon {
+    background-image: url(../Images/button-sprite.png);
+    background-position:-90px 0;
+    width: 18px;
+    height: 18px;
+}
+
+#btnIdentify:hover:before {
+    content:'Select Multiple';
+    position:absolute;
+    display:block;
+    width:auto;
+    top:20px;
+    left:20px;
+    background:rgba(188,188,188,0.7);
+    padding:2px;
+    z-index:999;
+    border:1px solid #b7b7b7;
+    float:left;
+    font-size:.8em;
+}
+
+.clearIcon {
+    background-image: url(../Images/button-sprite.png);
+    background-position:-72px 0;
+    width: 18px;
+    height: 18px;
+}
+
+#btnClearSelected:hover:after {
+    content:'Clear Selection';
+    position:absolute;
+    display:block;
+    width:auto;
+    top:20px;
+    left:75px;
+    background:rgba(188,188,188,0.7);
+    padding:2px;
+    z-index:999;
+    border:1px solid #b7b7b7;
+    float:left;
+    font-size:.8em;
+}
+
+.deactivateIcon {
+    /* Hidden in UI */
+    background-image: url(../Images/button-sprite.png);
+    background-position:-54px 0;
+    width: 18px;
+    height: 18px;
+}
+
+.zoomfullextIcon {
+    background-image: url(../Images/button-sprite.png);
+    background-position:-126px 0;
+    width: 18px;
+    height: 18px;
+}
+
+#btnZoomFullExtent:hover:after {
+    content:'Full Map';
+    position:absolute;
+    display:block;
+    width:auto;
+    top:20px;
+    left:120px;
+    background:rgba(188,188,188,0.7);
+    padding:2px;
+    z-index:999;
+    border:1px solid #b7b7b7;
+    float:left;
+    font-size:.8em;
+}
+
+.zoomprevIcon {
+    /* Hidden in UI */
+    background-image: url(../Images/button-sprite.png);
+    background-position:0 0;
+    width: 18px;
+    height: 18px;
+}
+
+.zoomnextIcon {
+    /* Hidden in UI */
+    background-image: url(../Images/button-sprite.png);
+    background-position:0 0;
+    width: 18px;
+    height: 18px;
+}
+
+
+.searchIcon {
+    background-image: url(../Images/button-sprite.png);
+    width: 18px;
+    height: 18px;
+}
+
+
+.dgrid {
+    height: 90%;
+    width: 100%;
+}
+
+#divApplicationDetails .dgrid-column-0 {
+    width: 125px;
+}
+
+.esriLargeSliderTL {
+    left: 95%;
+    top: 10px;
+}
+
+#divParcelDetails .dgrid-column-0 {
+    width: 125px;
+}
+
+/* ESRI Overrides */
+.tundra .dijitBorderContainer {
+    background-color:#FEE4B7;
+}
+
+.tundra .dijitGutterH {
+    background-color:#FEE4B7;
+}
+
+.tundra .dijitSplitterV {
+    background-color:#FEE4B7;
+}
+
+.tundra .dijitGutterV {
+    background-color:#FEE4B7;
+}
+
+#disclaimer .dijitButtonNode {
+    width:260px;
+}
+/* Search Bar */
+#searchBox {
+    position:absolute;
+    color:#FDD88C;
+    top: 22px;
+    right: 20px;
+}
+
+#searchLabel {
+    font-size:1.3em;
+}
+
+#txtSearchValue, #selFieldName, #selBark {
+    width:150px;
+    height:18px;
+    margin-left:10px;
+    background: transparent url("../images/search-bk.jpg") repeat-x scroll 0% 0%;
+    border:none;
+    font-size:.8em;
+    color:#5A5A5A;
+    border: 1px solid #999;
+}
+
+#btnSearch {
+    
+}
+
+tundra .dijitButtonDisabled {
+
+}
+
+
+/* Sidebar */
+
+#s-bar {
+    width: 25%;
+
+    height:100%;
+    overflow-y:hidden; 
+    min-width:350px; 
+    background-color:#FEE4B7; 
+    border:none; 
+    padding-top:0; 
+    padding-left:2px;
+}
+
+#divMoveNext {
+    height:10%;
+    text-align:center;
+}
+
+#spanSelectedApplications {
+    margin-top:3px;
+    font-weight:normal;
+    font-size:1em;
+    color:#5a5a5a;
+}
+
+.dijitAccordionContainer {
+    border-top:1px solid #b7b7b7 !important;
+}
+
+.tundra .dijitAccordionTitleSelected {
+    color:#ffffff;
+    padding-left:12px;
+    background:#FAFAFA url("../images/accordion-selected-bk.png") repeat-x scroll left bottom !important;
+}
+
+.tundra .dijitAccordionTitleSelected span {
+    color:#ffffff !important;
+}
+
+.tundra .dijitAccordionTitle {
+    color:#3b3b3b;
+    padding-left:12px;
+    background:#C8E2FF none repeat-x scroll left bottom;
+}
+
+.tundra .dijitAccordionTitleSelected:before {
+    content:''!important;
+    position:relative;
+    top:4px;
+    left:-3px;
+    float:left;
+    width: 0; 
+	height: 0; 
+	border-left: 4px solid transparent !important;
+	border-right: 4px solid transparent !important;
+	border-top: 6.924px solid #fff !important;
+}
+
+.tundra .dijitAccordionTitle:before {
+    content:'';
+    position:relative;
+    top:4px;
+    left:-3px;
+    float:left;
+    width: 0; 
+	height: 0; 
+	border-left: 6.924px solid #3b3b3b;
+	border-bottom: 4px solid transparent;
+	border-top: 4px solid transparent;
+}
+
+.tundra .dgrid-header, .tundra .dgrid-footer {
+	background: #DBDBDB;
+	 background: -moz-linear-gradient(top, #DBDBDB 0%, #DBDBDB 100%);
+	 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DBDBDB), color-stop(100%,#DBDBDB));
+	 background: -webkit-linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 background: -o-linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 background: -ms-linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 background: linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DBDBDB', endColorstr='#DBDBDB',GradientType=0 );
+	 font-weight: bold;
+     border-width: 1px 1px 0 0;
+    border-style: solid solid none none;
+    border-color: #CCC #CCC;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    color: #3B3B3B;
+    font-size: 1em;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+.tundra .dgrid-header th:hover {
+	background: #DBDBDB;
+	 background: -moz-linear-gradient(top, #DBDBDB 0%, #DBDBDB 100%);
+	 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DBDBDB), color-stop(100%,#DBDBDB));
+	 background: -webkit-linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 background: -o-linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 background: -ms-linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+	 background: linear-gradient(top, #DBDBDB 0%,#DBDBDB 100%);
+}
+
+.dgrid {
+    border-top:0;
+    border-right:1px solid;
+    border-left:0;
+    background-color:#fff;
+    width:100%;
+}
+
+.dgrid-content{
+    width:100%;
+}
+
+#accordionHeadingContainer {
+    background: #DBDBDB none repeat scroll 0% 0%;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #CCC;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    color: #3B3B3B;
+    font-size: 1em;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    text-shadow: 0px 1px 0px #FFF;
+    padding:4px;
+    margin-top:10px;
+}
+
+/* button Customizations */
+.tundra .dijitIcon {
+    margin-left:6px;
+}
+
+.printButton .dijitButtonNode{
+    width:95%;
+}
+
+.tundra .dijitButtonNode, tundra .dijitDisabled {
+    border-radius:4px;
+    border-color:#b7b7b7;
+    /*background: #DC953D;
+    background: -moz-linear-gradient(top, #DC953D 0%, #D78B27 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DC953D), color-stop(100%,#D78B27));
+	background: -webkit-linear-gradient(top, #DC953D 0%,#D78B27 100%);
+	background: -o-linear-gradient(top, #DC953D 0%,#D78B27 100%);
+	background: -ms-linear-gradient(top, #DC953D 0%,#D78B27 100%);
+	background: linear-gradient(top, #DC953D 0%,#D78B27 100%);*/
+    background: #dba664; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dba664 0%, #dc953d 48%, #d67e0a 50%, #dba460 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dba664), color-stop(48%,#dc953d), color-stop(50%,#d67e0a), color-stop(100%,#dba460)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dba664', endColorstr='#dba460',GradientType=0 ); /* IE6-9 */
+
+}
+
+.tundra .dijitTitlePaneTitle {
+    border-radius:4px;
+    border-color:#b7b7b7;
+    background: #dba664; /* Old browsers */
+    background: -moz-linear-gradient(top,  #dba664 0%, #dc953d 48%, #d67e0a 50%, #dba460 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dba664), color-stop(48%,#dc953d), color-stop(50%,#d67e0a), color-stop(100%,#dba460)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #dba664 0%,#dc953d 48%,#d67e0a 50%,#dba460 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dba664', endColorstr='#dba460',GradientType=0 ); /* IE6-9 */
+}
+
+.tundra .dijitTitlePaneTextNode {
+    color:#fff
+}
+
+
+/* #endregion */
+
+/* #region Mobile Styles */
+/********************
+*   Mobile Styles   *
+********************/
+@media only screen and (max-width: 1220px) {
+    #SussexCoLogo {
+        width: 312px;
+        /*background-position: -105px 0;*/
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    #SussexCoLogo {
+        width: 211px;
+        background-position: 0 9px;
+        background-size: 100% auto;
+    }
+
+    .tundra .dijitIcon {
+        margin-left:4px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    #SussexCoLogo {
+        background-image: none;
+        width: 1px;
+    }
+
+.tundra .dijitIcon {
+        margin-left:3px;
+    }
+}
+
+@media only screen and (max-width: 835px) {
+    /*#SussexCoLogo {
+        background-image: none;
+        width: 1px;
+    }*/
+
+    .tundra .dijitIcon {
+        margin-left:3px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+#warning {
+    display:block;
+    width:100%;
+    height:100%;
+    text-align:center;
+    padding:50px 5px;
+    z-index:10;
+}
+}    
+/* #endregion */
