@@ -83,7 +83,12 @@ table, th, td {
 
 #search-container #searchBox {
     background: #FFFFFF;
-    
+}
+
+#divLayerVisibility {
+    position: absolute;
+    width: 400px !important;
+    height: 400px !important;
 }
 
 /* Theme overwrite */

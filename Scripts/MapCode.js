@@ -204,6 +204,11 @@ require([
             $("#searchBox").css("visibility", "visible");
         });
 
+        $(document).on("click", "#layers", function() {
+            console.log("layers");
+            $("#divLayerVisibility").css("visibility", "visible");
+        });
+
         registry.byId("btnMoveToStart").setDisabled(true);
         registry.byId("btnMovePreviousPage").setDisabled(true);
         registry.byId("btnMoveNextPage").setDisabled(true);
