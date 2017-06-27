@@ -106,7 +106,7 @@
         </div>
     </header>
 
-    <div data-dojo-type="dijit/layout/BorderContainer" id="divMain" data-dojo-props="design:'sidebar'" style="width: 100%; height: 100%">
+    <div data-dojo-type="dijit/layout/BorderContainer" id="divMain" style="height: calc(100% - 92px)">
         <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center', splitter:true" style="height: 100%">
             <div id="mapDiv" style="height:100%"></div>
 
@@ -138,13 +138,13 @@
                 </div>
             </div>
 
-
+            <!-- Map Buttons -->
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:false" id="divNavigation" style="position:absolute; left:134px; top: 8px; height:60px; width:220px; border:0px; overflow:hidden;">
                 <div data-dojo-type="dijit/form/Button" id="btnZoomIn" data-dojo-props="iconClass:'zoominIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnZoomOut" data-dojo-props="iconClass:'zoomoutIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnPan" data-dojo-props="iconClass:'panIcon'" style="display:none;"></div>
-                <div data-dojo-type="dijit/form/Button" id="btnIdentify" data-dojo-props="iconClass:'identifyIcon'"></div>
-                <div data-dojo-type="dijit/form/Button" id="btnClearSelected" data-dojo-props="iconClass:'clearIcon'"></div>
+                <div data-dojo-type="dijit/form/Button" id="btnIdentify">Select Area</div>
+                <!--<div data-dojo-type="dijit/form/Button" id="btnClearSelected" data-dojo-props="iconClass:'clearIcon'"></div>-->
 
                 <div data-dojo-type="dijit/form/Button" id="btnDeactivate" data-dojo-props="iconClass:'deactivateIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnZoomFullExtent" data-dojo-props="iconClass:'zoomfullextIcon'" style="display:none;"></div>
@@ -152,16 +152,15 @@
                 <div data-dojo-type="dijit/form/Button" id="btnZoomPrevious" data-dojo-props="iconClass:'zoomprevIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnZoomNext" data-dojo-props="iconClass:'zoomnextIcon'" style="display:none;"></div>
             </div>
-        </div>
 
-        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="minSize:350, region:'left', splitter:true" id="s-bar">
-
-            <div style="width:100%;height:43%">
+            <!-- Search results -->
+            <div id="search-results">
+                <div data-dojo-type="dijit/form/Button" id="btnClearSelected">Clear Selected</div>
                 <div id="accordionHeadingContainer">
                     <span id="accordionHeading">Selected Features:</span>
                     <select id="selResultsLayer" name="selResultsLayer" disabled style="width:50%;margin-right:5px; float:right"></select>
                 </div>
-                <div data-dojo-type="dijit/layout/AccordionContainer" style="height:100%" id="divApplicationDetails"></div>
+                <div data-dojo-type="dijit/layout/AccordionContainer" id="divApplicationDetails"></div>
                 <div id="divMoveNext">
                     <div data-dojo-type="dijit/form/Button" id="btnMoveToStart" data-dojo-props="iconClass:'moveToStartIcon'"></div>
                     <div data-dojo-type="dijit/form/Button" id="btnMovePreviousPage" data-dojo-props="iconClass:'movePreviousIcon'"></div>

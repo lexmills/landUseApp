@@ -94,6 +94,21 @@ table, th, td {
     height: 400px !important;
 }
 
+#search-results {
+    background: #fff;
+    border: 1px solid #ccc;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 400px;
+    z-index: 999;
+}
+
+#search-results #divApplicationDetails {
+    height: 300px;
+}
+
 /* Theme overwrite */
 .tundra .dijitTitlePaneTitle, .tundra .dijitButtonNode, tundra .dijitDisabled {
     background: #dba664;
@@ -108,4 +123,22 @@ table, th, td {
 
 .tundra .dijitTextBoxReadOnly, .tundra .dijitTextBoxReadOnly .dijitButtonNode, .tundra .dijitButtonDisabled .dijitButtonNode, .tundra .dijitToggleButtonDisabled .dijitButtonNode, .tundra .dijitDropDownButtonDisabled .dijitButtonNode, .tundra .dijitComboButtonDisabled .dijitButtonNode, .tundra .dijitTextBoxDisabled, .tundra .dijitTextBoxDisabled .dijitButtonNode {
     color: #d67e0a;
+}
+
+.tundra .dijitAccordionTitleSelected {
+    background: #00008B;
+}
+
+.tundra .dijitButtonHover .dijitButtonNode, .tundra .dijitButtonNodeHover, .tundra .dijitToggleButtonHover .dijitButtonNode, .tundra .dijitDropDownButtonHover .dijitButtonNode, .tundra .dijitComboButton .dijitButtonContentsHover, .tundra .dijitComboButton .dijitDownArrowButtonHover {
+    border-color: #a5beda;
+    border-bottom-color: #5c7590;
+    color: #fff;
+    background: #c3740b;
+}
+
+.tundra .dijitTitlePaneHover .dijitTitlePaneTitle, .dijitButtonNode:hover {
+    border-color: #a5beda;
+    border-bottom-color: #5c7590;
+    color: #fff;
+    background: #c3740b;
 }
