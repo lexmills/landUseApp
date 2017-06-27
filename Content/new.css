@@ -73,6 +73,19 @@ table, th, td {
     border: none;
 }
 
+/* IDs */
+#search-container {
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    z-index: 999;
+}
+
+#search-container #searchBox {
+    background: #FFFFFF;
+    
+}
+
 /* Theme overwrite */
 .tundra .dijitTitlePaneTitle, .tundra .dijitButtonNode, tundra .dijitDisabled {
     background: #dba664;

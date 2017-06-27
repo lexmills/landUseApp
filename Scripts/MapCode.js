@@ -200,6 +200,10 @@ require([
 
         $("#spanZoomAll").hide();
 
+        $(document).on("click", "#search", function() {
+            $("#searchBox").css("visibility", "visible");
+        });
+
         registry.byId("btnMoveToStart").setDisabled(true);
         registry.byId("btnMovePreviousPage").setDisabled(true);
         registry.byId("btnMoveNextPage").setDisabled(true);

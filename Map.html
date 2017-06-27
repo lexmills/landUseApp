@@ -121,13 +121,15 @@
             </div>
 
             <!-- Search -->
-            <div class="dijitButtonNode" id="search" style="position: absolute; left: 100px; top: 10px; z-index: 999;">Search</div>
-            <div id="searchBox">
-                <span id="searchLabel">Search Parcels:</span><br />
-                <select id="selFieldName"></select>
-                <input type="text" id="txtSearchValue" onkeypress="return searchKeyPress(event);" />
+            <div id="search-container">
+                <div class="dijitButtonNode" id="search">Search</div>
+                <div id="searchBox" style="visibility: hidden">
+                    <span id="searchLabel">Search Parcels:</span><br />
+                    <select id="selFieldName"></select>
+                    <input type="text" id="txtSearchValue" onkeypress="return searchKeyPress(event);" />
 
-                <div data-dojo-type="dijit/form/Button" id="btnSearch" data-dojo-props="iconClass:'searchIcon'"></div>
+                    <div data-dojo-type="dijit/form/Button" id="btnSearch" data-dojo-props="iconClass:'searchIcon'"></div>
+                </div>
             </div>
 
 
