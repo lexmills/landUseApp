@@ -130,8 +130,14 @@ button, .button {
     border: 1px solid #777;
     display: none;
     position: absolute;
-    right: 0;
-    width: 300px;
+    left: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 266px;
+}
+
+header .widget {
+    left: 0;
 }
 
 .widget h2 {

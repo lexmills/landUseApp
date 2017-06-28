@@ -68,30 +68,6 @@
 
                 <button data-dojo-type="dijit/form/Button" class="printButton" id="btnPrint">Print Map</button>
             </div>
-<!--
-            <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Print', closable:false, open:false">
-                <div data-dojo-type="dijit/layout/ContentPane">
-                    <table>
-                        <tr>
-                            <td>Template</td>
-                            <td><select id="selPrintTemplate" /></td>
-                        </tr>
-                        <tr style="border:none">
-                            <td>Format</td>
-                            <td>
-                                <select id="selPrintFormat" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <button data-dojo-type="dijit/form/Button" class="printButton" id="btnPrint">Print Map</button>
-                            </td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
--->
         </div>
 
         <!-- Help -->
@@ -107,33 +83,6 @@
                 </ul>
             </div>
 
-<!--
-            <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Help', closable:false, open:false">
-                <div data-dojo-type="dijit/layout/ContentPane" style="width:auto; height:auto">
-
-                    <div style="width:100%">
-                        <table style="width:95%; margin:5px">
-                            <tr style="border:none">
-                                <td style="border:none; width:100px"> <a href="https://www.sussexcountyde.gov/sites/default/files/OnlineMap_GUIDE.pdf" target="_blank">Map Help </a> </td>
-                                <td style="border:none"></td>
-                            </tr>
-
-                            <tr style="border:none">
-                                <td style="border:none; width:100px"> <a href="http://www.sussexcountyde.gov/mapping-addressing" target="_blank">Contact Mapping </a> </td>
-                                <td style="border:none"></td>
-                            </tr>
-                            <tr style="border:none">
-                                <td style="border:none; width:100px"> <a href="http://www.sussexcountyde.gov/planning-zoning" target="_blank">Contact Zoning </a> </td>
-                                <td style="border:none"></td>
-                            </tr>
-
-                        </table>
-
-                    </div>
-
-                </div>
-            </div>
--->
         </div>
     </header>
 
@@ -143,10 +92,10 @@
 
             <!-- Basemaps -->
             <div id="basemaps-container" style="position:absolute; left:10px; top:10px; z-index:999;">
-                <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Basemap', closable:false, open:false">
-                    <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
-                        <div id="basemapGallery"></div>
-                    </div>
+                <button id="basemapButton"><span class="icon-basemap vertical-align-middle"></span> <span class="vertical-align-middle">Basemaps</span></button>
+
+                <div class="widget" id="basemapWidget">
+                    <div id="basemapGallery"></div>
                 </div>
             </div>
 

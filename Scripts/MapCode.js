@@ -231,7 +231,14 @@ require([
             return false;
         });
 
+        $(document).on("click", "#basemapButton", function() {
+            showWidget("#basemapWidget");
+
+            return false
+        });
+
         var showWidget = function(widgetID) {
+            console.log("test");
             if($(widgetID).css("display") == "none") {
                 $(widgetID).show();
             }
