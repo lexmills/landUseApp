@@ -52,6 +52,23 @@
 
         <!-- Printing -->
         <div style="position:absolute; right:300px; top:10px; z-index:998">
+            <button id="printButton"><span class="icon-print vertical-align-middle"></span> <span class="vertical-align-middle">Print</span></button>
+
+            <div class="widget" id="printWidget">
+                <h2>Print <span class="icon-close"></span></h2>
+
+                <div>
+                    <label>Template</label>
+                    <select id="selPrintTemplate" />
+                </div>
+                <div>
+                    <label>Format</label>
+                    <select id="selPrintFormat" />
+                </div>
+
+                <button data-dojo-type="dijit/form/Button" class="printButton" id="btnPrint">Print Map</button>
+            </div>
+<!--
             <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Print', closable:false, open:false">
                 <div data-dojo-type="dijit/layout/ContentPane">
                     <table>
@@ -74,10 +91,23 @@
 
                 </div>
             </div>
+-->
         </div>
 
         <!-- Help -->
-        <div style="position: absolute; right: 20px; top: 10px; z-index: 998">
+        <div id="help-container" style="position: absolute; right: 20px; top: 10px; z-index: 998">
+            <button id="helpButton"><span class="icon-help vertical-align-middle"></span> <span class="vertical-align-middle">Help</span></button>
+
+            <div class="widget" id="helpWidget">
+                <h2>Help Options <span class="icon-close"></span></h2>
+                <ul>
+                    <li><a href="https://www.sussexcountyde.gov/sites/default/files/OnlineMap_GUIDE.pdf" target="_blank">Map Help </a></li>
+                    <li><a href="http://www.sussexcountyde.gov/mapping-addressing" target="_blank">Contact Mapping </a></li>
+                    <li><a href="http://www.sussexcountyde.gov/planning-zoning" target="_blank">Contact Zoning </a></li>
+                </ul>
+            </div>
+
+<!--
             <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Help', closable:false, open:false">
                 <div data-dojo-type="dijit/layout/ContentPane" style="width:auto; height:auto">
 
@@ -103,6 +133,7 @@
 
                 </div>
             </div>
+-->
         </div>
     </header>
 

@@ -211,7 +211,6 @@ require([
         });
 
         $(document).on("click", "#layers", function() {
-            console.log($("#divLayerVisibility").css("visibility"));
             if($("#divLayerVisibility").css("visibility") == "visible") {
                 $("#divLayerVisibility").css("visibility", "hidden");
             }
@@ -219,6 +218,27 @@ require([
                 $("#divLayerVisibility").css("visibility", "visible");
             }
         });
+
+        $(document).on("click", "#helpButton", function() {
+            showWidget("#helpWidget");
+
+            return false
+        });
+
+        $(document).on("click", "#printButton", function() {
+            showWidget("#printWidget");
+
+            return false;
+        });
+
+        var showWidget = function(widgetID) {
+            if($(widgetID).css("display") == "none") {
+                $(widgetID).show();
+            }
+            else {
+                $(widgetID).hide();
+            }
+        }
 
         registry.byId("btnMoveToStart").setDisabled(true);
         registry.byId("btnMovePreviousPage").setDisabled(true);
@@ -1029,7 +1049,8 @@ require([
 
             //print
 
-            registry.byId('btnPrint').on("click", function () {
+            $('#btnPrint').on("click", function () {
+                console.log("button print");
                 Print();
             });
 
