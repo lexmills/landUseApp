@@ -95,6 +95,8 @@
                 <button id="basemapButton"><span class="icon-basemap vertical-align-middle"></span> <span class="vertical-align-middle">Basemaps</span></button>
 
                 <div class="widget" id="basemapWidget">
+                    <h2>Basemaps <span class="icon-close"></span></h2>
+
                     <div id="basemapGallery"></div>
                 </div>
             </div>
@@ -108,18 +110,25 @@
 
             <!-- Search -->
             <div id="search-container">
-                <div class="dijitButtonNode" id="search">Search</div>
-                <div id="searchBox" style="visibility: hidden">
-                    <span id="searchLabel">Search Parcels:</span><br />
-                    <select id="selFieldName"></select>
-                    <input type="text" id="txtSearchValue" onkeypress="return searchKeyPress(event);" />
+                <button id="searchButton"><span class="icon-search vertical-align-middle"></span> <span class="vertical-align-middle">Search</span></button>
+
+                <div class="widget" id="searchBox">
+                    <h2>Search Parcels <span class="icon-close"></span></h2>
+                    <div>
+                        <label class="display-block">Search By</label>
+                        <select id="selFieldName"></select>
+                    </div>
+                    <div>
+                        <label class="display-block">Search Text</label>
+                        <input type="text" id="txtSearchValue" onkeypress="return searchKeyPress(event);" />
+                    </div>
 
                     <div data-dojo-type="dijit/form/Button" id="btnSearch" data-dojo-props="iconClass:'searchIcon'"></div>
                 </div>
             </div>
 
             <!-- Map Buttons -->
-            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:false" id="divNavigation" style="position:absolute; left:134px; top: 8px; height:60px; width:220px; border:0px; overflow:hidden;">
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:false" id="divNavigation" style="position:absolute; left:308px; top: 8px; height:60px; width:220px; border:0px; overflow:hidden;">
                 <div data-dojo-type="dijit/form/Button" id="btnZoomIn" data-dojo-props="iconClass:'zoominIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnZoomOut" data-dojo-props="iconClass:'zoomoutIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnPan" data-dojo-props="iconClass:'panIcon'" style="display:none;"></div>

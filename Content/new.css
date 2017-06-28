@@ -90,17 +90,9 @@ button, .button {
 /* IDs */
 #search-container {
     position: absolute;
-    left: 100px;
+    left: 140px;
     top: 10px;
     z-index: 999;
-}
-
-#search-container #searchBox {
-    background: #FFFFFF;
-    border: 1px solid #ccc;
-    left: 0;
-    padding: .5em;
-    width: 175px;
 }
 
 #divLayerVisibility {
@@ -129,25 +121,30 @@ button, .button {
     background: #fff;
     border: 1px solid #777;
     display: none;
+    padding: .5em;
     position: absolute;
     left: 0;
     max-height: 300px;
+    overflow-x: hidden;
     overflow-y: auto;
     width: 266px;
 }
 
 header .widget {
-    left: 0;
+    right: 0;
 }
 
 .widget h2 {
     color: #fff;
     background: #777;
-    margin: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: -.5em -.5em .5em;
     padding: .25em;
 }
 
 .widget h2 .icon-close {
+    cursor: pointer;
     position: absolute;
     right: 5px;
     top: 5px;
@@ -156,6 +153,10 @@ header .widget {
 .vertical-align-middle {
     display: inline-block;
     vertical-align: middle;
+}
+
+.display-block {
+    display: block;
 }
 
 /* Theme overwrite */

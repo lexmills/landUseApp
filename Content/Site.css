@@ -237,34 +237,17 @@ html, body {
     width:260px;
 }
 /* Search Bar */
+/*
 #searchBox {
     position:absolute;
     color:#FDD88C;
     top: 22px;
     right: 20px;
 }
+*/
 
 #searchLabel {
     font-size:1.3em;
-}
-
-#txtSearchValue, #selFieldName, #selBark {
-    width:150px;
-    height:18px;
-    margin-left:10px;
-    background: transparent url("../images/search-bk.jpg") repeat-x scroll 0% 0%;
-    border:none;
-    font-size:.8em;
-    color:#5A5A5A;
-    border: 1px solid #999;
-}
-
-#btnSearch {
-    
-}
-
-tundra .dijitButtonDisabled {
-
 }
 
 
