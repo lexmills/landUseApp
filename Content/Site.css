@@ -107,6 +107,7 @@ html, body {
     height: 18px;
 }
 
+/*
 #btnIdentify:hover:before {
     content:'Select Multiple';
     position:absolute;
@@ -121,6 +122,7 @@ html, body {
     float:left;
     font-size:.8em;
 }
+*/
 
 .clearIcon {
     background-image: url(../Images/button-sprite.png);
@@ -129,6 +131,7 @@ html, body {
     height: 18px;
 }
 
+/*
 #btnClearSelected:hover:after {
     content:'Clear Selection';
     position:absolute;
@@ -143,6 +146,7 @@ html, body {
     float:left;
     font-size:.8em;
 }
+*/
 
 .deactivateIcon {
     /* Hidden in UI */
@@ -217,10 +221,6 @@ html, body {
 }
 
 /* ESRI Overrides */
-.tundra .dijitBorderContainer {
-    background-color:#FEE4B7;
-}
-
 .tundra .dijitGutterH {
     background-color:#FEE4B7;
 }
@@ -370,7 +370,7 @@ html, body {
 }
 
 #accordionHeadingContainer {
-    background: #DBDBDB none repeat scroll 0% 0%;
+    /*background: #DBDBDB none repeat scroll 0% 0%;*/
     border-width: 1px 1px 0 1px;
     border-style: solid;
     border-color: #CCC;
@@ -381,10 +381,10 @@ html, body {
     border-image: none;
     color: #3B3B3B;
     font-size: 1em;
-    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+    /*font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;*/
     text-shadow: 0px 1px 0px #FFF;
     padding:4px;
-    margin-top:10px;
+    overflow: auto;
 }
 
 /* button Customizations */

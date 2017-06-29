@@ -258,6 +258,22 @@ require([
             }
         }
 
+        $(document).on("click", "#close-results", function() {
+            $('#search-results').animate({ width: 0 });
+
+            return false;
+        });
+
+        $(document).on("click", "#searchResultsBtn", function() {
+            showSearchResults();
+
+            return false;
+        });
+
+        var showSearchResults = function() {
+            $('#search-results').animate({ width: 400 });
+        }
+
         registry.byId("btnMoveToStart").setDisabled(true);
         registry.byId("btnMovePreviousPage").setDisabled(true);
         registry.byId("btnMoveNextPage").setDisabled(true);
@@ -1101,7 +1117,7 @@ require([
                 NavigationToolbarClicked('btnIdentify');
             });
 
-            registry.byId('btnClearSelected').on("click", function () {
+            $('#btnClearSelected').on("click", function () {
                 //clear results
                 //clear graphics
                 NavigationToolbarClicked('btnDeactivate');
@@ -2748,7 +2764,10 @@ require([
                 }
 
             }
+
             $("#divLayerVisibility").show();
+
+            $("#divLayerVisibility input[data-itemtype='layer']").after("<span class='icon-eye'></span>");
 
             function BuildLegendRow(evt) {
                 //this corresponds to the dGrid indent width above, plus 15px + 10px
@@ -2761,7 +2780,7 @@ require([
                 if (evt.id != -1) {
                     if (evt.parentId == 0) {
                         //group header
-                        htmlText += '<input style="vertical-align:middle" data-itemtype="group" data-groupid="' + evt.groupId + '" type="checkbox" checked/>';
+                        htmlText += '<input style="vertical-align:middle" data-itemtype="group" data-groupid="' + evt.groupId + '" type="checkbox" checked/><span class="icon-eye"></span>';
                         htmlText += '<span style="margin-left:5px;font-weight:bold;font-size:1.3em">' + evt.label + '</span>';
                         htmlText += '</div>';
                     }
@@ -2786,19 +2805,19 @@ require([
 
                                 if (evt.defaultVisibility) {
                                     if (evt.queryable) {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-itemtype="identify" data-serviceid="' + evt.referenceId + '" type="checkbox" checked/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-itemtype="identify" data-serviceid="' + evt.referenceId + '" type="checkbox" checked/><span class="icon-info"></span></div>';
                                     }
                                     else {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span class="icon-info"></span></div>';
                                     }
 
                                 }
                                 else {
                                     if (evt.queryable) {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox" checked/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox" checked/><span class="icon-info"></span></div>';
                                     }
                                     else {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span class="icon-info"></span></div>';
                                     }
                                 }
 
@@ -2809,19 +2828,19 @@ require([
                                 htmlText += '<span style="margin-left:15px;vertical-align:middle;font-size:1.3em">' + evt.label + '</span>';
                                 if (evt.defaultVisibility) {
                                     if (evt.queryable) {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-serviceid="' + evt.referenceId + '" data-sublayerid="' + evt.subLayerId + '" type="checkbox" checked/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-serviceid="' + evt.referenceId + '" data-sublayerid="' + evt.subLayerId + '" type="checkbox" checked/><span class="icon-info"></span></div>';
                                     }
                                     else {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span class="icon-info"></span></div>';
                                     }
 
                                 }
                                 else {
                                     if (evt.queryable) {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox" checked/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox" checked/><span class="icon-info"></span></div>';
                                     }
                                     else {
-                                        htmlText += '<div style="float:right"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span> Id?</span></div>';
+                                        htmlText += '<div class="info-toggle"><input style="vertical-align:middle" data-groupid="' + evt.groupId + '" data-itemtype="identify" data-sublayerid="' + evt.subLayerId + '" data-serviceid="' + evt.referenceId + '" type="checkbox"/><span class="icon-info"></span></div>';
                                     }
                                 }
 

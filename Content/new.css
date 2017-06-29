@@ -1,7 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src: url('fonts/icomoon.eot?vfey7u');
-    src: url('fonts/icomoon.eot?vfey7u#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?vfey7u') format('truetype'), url('fonts/icomoon.woff?vfey7u') format('woff'), url('fonts/icomoon.svg?vfey7u#icomoon') format('svg');
+    src:  url('fonts/icomoon.eot?o57ax4');
+    src:  url('fonts/icomoon.eot?o57ax4#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?o57ax4') format('truetype'),
+    url('fonts/icomoon.woff?o57ax4') format('woff'),
+    url('fonts/icomoon.svg?o57ax4#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -15,6 +18,7 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -23,50 +27,53 @@
 .icon-mouse-pointer:before {
     content: "\e90a";
 }
-
 .icon-eye:before {
     content: "\e909";
 }
-
 .icon-info:before {
     content: "\e908";
 }
-
+.icon-double-chevron-left:before {
+    content: "\e90b";
+}
+.icon-double-chevron-right:before {
+    content: "\e90c";
+}
 .icon-close:before {
     content: "\e907";
 }
-
 .icon-help:before {
     content: "\e904";
 }
-
 .icon-print:before {
     content: "\e905";
 }
-
 .icon-search:before {
     content: "\e906";
 }
-
 .icon-exclamation:before {
     content: "\e900";
 }
-
 .icon-basemap:before {
     content: "\e901";
 }
-
 .icon-legend:before {
     content: "\e902";
 }
-
 .icon-layers:before {
     content: "\e903";
 }
 
+
 /*  Tags  */
 header {
     background: #00008B;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin: 0;
 }
 
 table, th, td {
@@ -75,6 +82,8 @@ table, th, td {
 
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 button, .button {
@@ -87,6 +96,10 @@ button, .button {
     padding: .25em 1em;
 }
 
+button:hover, .button:hover {
+    background: #c3740b;
+}
+
 /* IDs */
 #search-container {
     position: absolute;
@@ -95,25 +108,68 @@ button, .button {
     z-index: 999;
 }
 
+
 #divLayerVisibility {
     position: absolute;
     width: 400px !important;
     height: 400px !important;
+    visibility: hidden;
 }
+
 
 #search-results {
     background: #fff;
     border: 1px solid #ccc;
-    height: 400px;
+    box-sizing: border-box;
+    height: 100%;
     position: absolute;
     right: 0;
     top: 0;
     width: 400px;
     z-index: 999;
+    overflow: hidden;
+}
+
+#search-results h2 {
+    background: #f3f3f3;
+    padding: .25em;
+    overflow: auto;
+}
+
+#search-results h2 a {
+    cursor: pointer;
+    float: right;
+    font-size: .7em;
+    color: #00008B;
+    padding-top: .3em;
+}
+
+#search-results .icon-double-chevron-right {
+    font-size: 1.5em;
+    padding-top: .2em;
 }
 
 #search-results #divApplicationDetails {
     height: 300px;
+}
+
+#search-results #close-results {
+    cursor: pointer;
+    margin: -.25em -.25em 0 -.25em;
+    padding: .4em;
+    text-align: right;
+}
+
+#searchResultsBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#searchResultsBtn .icon-double-chevron-left {
+    font-size: 1.2em;
+    padding-top: .2em;
+    margin-bottom: -.1em;
 }
 
 /* Classes */
@@ -131,19 +187,18 @@ button, .button {
 }
 
 header .widget {
+    left: initial;
     right: 0;
 }
 
-.widget h2 {
+.widget h2, .layer-container h2 {
     color: #fff;
     background: #777;
-    font-size: 1.5em;
-    font-weight: normal;
     margin: -.5em -.5em .5em;
     padding: .25em;
 }
 
-.widget h2 .icon-close {
+.widget h2 .icon-close, .layer-container h2 .icon-close {
     cursor: pointer;
     position: absolute;
     right: 5px;
@@ -159,7 +214,23 @@ header .widget {
     display: block;
 }
 
+.dark-gray-bg {
+    background: #777;
+}
+
+.white {
+    color: #fff;
+}
+
 /* Theme overwrite */
+.esriOverviewMap {
+    display: none;
+}
+
+.esriLargeSliderTL {
+    top: 55px;
+}
+
 .tundra .dijitTitlePaneTitle, .tundra .dijitButtonNode, tundra .dijitDisabled {
     background: #D67E0A;
     border: none;
@@ -191,4 +262,55 @@ header .widget {
     border-bottom-color: #5c7590;
     color: #fff;
     background: #c3740b;
+}
+
+/* Layer Visibility Icons */
+.info-toggle {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    left: 62px;
+    top: 47px;
+    font-size: .85em;
+}
+
+#divLayerVisibility input ~ .icon-info, #divLayerVisibility input ~ .icon-eye {
+    color: lightgray;
+}
+
+#divLayerVisibility input ~ .icon-eye, #divLayerVisibility input ~ .icon-info {
+    font-size: 1.5em;
+}
+
+#divLayerVisibility input:checked ~ .icon-info, #divLayerVisibility input:checked ~ .icon-eye {
+    color: #777;
+}
+
+#divLayerVisibility input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+#divLayerVisibility .ui-state-default .ui-icon {
+    cursor: pointer;
+    float: right !important;
+}
+
+#divLayerVisibility .ui-icon-triangle-1-se {
+    background-position: -48px -128px !important;
+}
+
+#divLayerVisibility .ui-icon-triangle-1-e {
+    background-position: -32px -126px !important;
+}
+
+
+/* Media Queries */
+@media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    .hide-mobile {
+        display: none;
+    }
 }
