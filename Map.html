@@ -52,19 +52,19 @@
         <span id="SussexCoLogo"></span>
 
         <!-- Printing -->
-        <div style="position:absolute; right:110px; top:30px; z-index:998">
+        <div id="print-container" style="position:absolute; right:110px; top:30px; z-index:998">
             <button id="printButton"><span class="icon-print vertical-align-middle"></span> <span class="vertical-align-middle">Print</span></button>
 
             <div class="widget" id="printWidget">
                 <h2>Print <span class="icon-close"></span></h2>
 
                 <div>
-                    <label>Template</label>
-                    <select id="selPrintTemplate" />
+                    <label class="display-block">Template</label>
+                    <select id="selPrintTemplate"></select>
                 </div>
                 <div>
-                    <label>Format</label>
-                    <select id="selPrintFormat" />
+                    <label class="display-block">Format</label>
+                    <select id="selPrintFormat"></select>
                 </div>
 
                 <button data-dojo-type="dijit/form/Button" class="printButton" id="btnPrint">Print Map</button>
