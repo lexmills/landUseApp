@@ -459,37 +459,3 @@ html, body {
         margin-left:4px;
     }
 }
-
-@media only screen and (max-width: 960px) {
-    #SussexCoLogo {
-        background-image: none;
-        width: 1px;
-    }
-
-.tundra .dijitIcon {
-        margin-left:3px;
-    }
-}
-
-@media only screen and (max-width: 835px) {
-    /*#SussexCoLogo {
-        background-image: none;
-        width: 1px;
-    }*/
-
-    .tundra .dijitIcon {
-        margin-left:3px;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-#warning {
-    display:block;
-    width:100%;
-    height:100%;
-    text-align:center;
-    padding:50px 5px;
-    z-index:10;
-}
-}    
-/* #endregion */

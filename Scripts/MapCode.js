@@ -259,7 +259,7 @@ require([
         }
 
         $(document).on("click", "#close-results", function() {
-            $('#search-results').animate({ width: 0 });
+            $('#search-results').animate({ width: "toggle" });
 
             return false;
         });
@@ -271,7 +271,7 @@ require([
         });
 
         var showSearchResults = function() {
-            $('#search-results').animate({ width: 400 });
+            $('#search-results').animate({ width: "toggle" });
         }
 
         registry.byId("btnMoveToStart").setDisabled(true);
@@ -417,6 +417,7 @@ require([
         }
 
         function doIdentify(geom) {
+
             app.MapDraw.deactivate();
             app.Map.enableMapNavigation();
             app.AllResultsStore = null;
@@ -445,6 +446,7 @@ require([
             app.SearchInProgressSpinner.spin(document.getElementById('divApplicationDetails'));
 
             var layersToSearch = []; //url, layerIds[]
+
             $("#divLayerVisibility :checked[data-itemtype='identify']").each(function () {
                 if ($(this).is(':enabled')) {
                     //checkbox will be disabled if we're outside the visible extent
@@ -491,6 +493,7 @@ require([
             });
 
             var idTasks = [];
+
             for (var searchCount = 0; searchCount < layersToSearch.length; searchCount++) {
                 var idTask = new esriIdentifyTask(layersToSearch[searchCount].layerUrl);
                 var idParams = new esriIdentifyParameters();
@@ -777,8 +780,6 @@ require([
 
 
             function idResultsReady(idResults) {
-
-
                 for (var resCount = 0; resCount < idResults.length; resCount++) {
                     var orderItem = GetArrayItem(app.LayerOrder, 'url', idResults[resCount].layerUrl);
                     idResults[resCount].order = orderItem.order;
@@ -841,6 +842,7 @@ require([
                 $('#selResultsLayer').change();
             }
 
+            showSearchResults();
         }
 
 
@@ -1084,7 +1086,6 @@ require([
             //print
 
             $('#btnPrint').on("click", function () {
-                console.log("button print");
                 Print();
             });
 

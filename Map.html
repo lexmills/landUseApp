@@ -52,7 +52,7 @@
         <span id="SussexCoLogo"></span>
 
         <!-- Printing -->
-        <div id="print-container" style="position:absolute; right:110px; top:30px; z-index:998">
+        <div id="print-container" class="hide-mobile" style="position:absolute; right:110px; top:30px; z-index:998">
             <button id="printButton"><span class="icon-print vertical-align-middle"></span> <span class="vertical-align-middle">Print</span></button>
 
             <div class="widget" id="printWidget">
@@ -72,8 +72,8 @@
         </div>
 
         <!-- Help -->
-        <div id="help-container" style="position: absolute; right: 20px; top: 30px; z-index: 998">
-            <button id="helpButton"><span class="icon-help vertical-align-middle"></span> <span class="vertical-align-middle">Help</span></button>
+        <div id="help-container">
+            <button id="helpButton"><span class="icon-help vertical-align-middle"></span> <span class="vertical-align-middle hide-mobile">Help</span></button>
 
             <div class="widget" id="helpWidget">
                 <h2>Help <span class="icon-close"></span></h2>
@@ -93,7 +93,7 @@
 
             <!-- Basemaps -->
             <div id="basemaps-container" style="position:absolute; left:10px; top:10px; z-index:999;">
-                <button id="basemapButton"><span class="icon-basemap vertical-align-middle"></span> <span class="vertical-align-middle">Basemaps</span></button>
+                <button id="basemapButton"><span class="icon-basemap vertical-align-middle"></span> <span class="vertical-align-middle hide-mobile">Basemaps</span></button>
 
                 <div class="widget" id="basemapWidget">
                     <h2>Basemaps <span class="icon-close"></span></h2>
@@ -103,15 +103,15 @@
             </div>
 
             <!-- Layer Visibility -->
-            <div id="layer-container" style="position:absolute; left:250px; top:10px; z-index:999;">
-                <button id="layers"><span class="icon-layers vertical-align-middle"></span> <span class="vertical-align-middle">Layers</span></button>
+            <div id="layer-container">
+                <button id="layers"><span class="icon-layers vertical-align-middle"></span> <span class="vertical-align-middle hide-mobile">Layers</span></button>
 
                 <div id="divLayerVisibility"></div>
             </div>
 
             <!-- Search -->
             <div id="search-container">
-                <button id="searchButton"><span class="icon-search vertical-align-middle"></span> <span class="vertical-align-middle">Search</span></button>
+                <button id="searchButton"><span class="icon-search vertical-align-middle"></span> <span class="vertical-align-middle hide-mobile">Search</span></button>
 
                 <div class="widget" id="searchBox">
                     <h2>Search Parcels <span class="icon-close"></span></h2>
@@ -129,11 +129,11 @@
             </div>
 
             <!-- Map Buttons -->
-            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:false" id="divNavigation" style="position:absolute; left:350px; top: 8px; height:60px; width:220px;">
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:false" id="divNavigation">
                 <div data-dojo-type="dijit/form/Button" id="btnZoomIn" data-dojo-props="iconClass:'zoominIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnZoomOut" data-dojo-props="iconClass:'zoomoutIcon'" style="display:none;"></div>
                 <div data-dojo-type="dijit/form/Button" id="btnPan" data-dojo-props="iconClass:'panIcon'" style="display:none;"></div>
-                <div data-dojo-type="dijit/form/Button" id="btnIdentify"><span class="icon-mouse-pointer"></span> Select Area</div>
+                <div data-dojo-type="dijit/form/Button" id="btnIdentify"><span class="icon-mouse-pointer"></span> <span class="hide-mobile">Select Area</span></div>
                 <!--<div data-dojo-type="dijit/form/Button" id="btnClearSelected" data-dojo-props="iconClass:'clearIcon'"></div>-->
 
                 <div data-dojo-type="dijit/form/Button" id="btnDeactivate" data-dojo-props="iconClass:'deactivateIcon'" style="display:none;"></div>
@@ -144,7 +144,7 @@
             </div>
 
             <!-- Search results -->
-            <button id="searchResultsBtn"><span class="icon-double-chevron-left vertical-align-middle"></span><span class="vertical-align-middle">Search Results</span></button>
+            <button id="searchResultsBtn"><span class="icon-double-chevron-left vertical-align-middle hide-mobile"></span><span class="icon-info vertical-align-middle show-mobile"></span><span class="vertical-align-middle hide-mobile">Search Results</span></button>
 
             <div id="search-results">
                 <div id="close-results" class="white dark-gray-bg"><span class="vertical-align-middle">Hide search results</span> <span class="icon-double-chevron-right vertical-align-middle"></span></div>
